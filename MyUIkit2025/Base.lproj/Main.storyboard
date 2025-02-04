@@ -132,13 +132,22 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID" id="fSr-cp-8Qs">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellID" id="fSr-cp-8Qs" customClass="MyCollectionViewCell" customModule="MyUIkit2025" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="h1x-Uf-LW4">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gsY-Nb-euf">
+                                                    <rect key="frame" x="4" y="12.333333333333258" width="120" height="102"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="theImageView" destination="gsY-Nb-euf" id="bT8-CL-sAM"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerID" id="tug-5p-xor">
@@ -147,7 +156,7 @@
                                 </collectionReusableView>
                             </collectionView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Fzh-OC-sit">
-                                <rect key="frame" x="0.0" y="74" width="393" height="695"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <segmentedControl opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-gg-tdu">
@@ -176,6 +185,7 @@
                             <constraint firstItem="Nvd-H1-Fze" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JR6-rN-jTs"/>
                             <constraint firstItem="YCd-nm-2Qg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="KJl-zz-ohg"/>
                             <constraint firstItem="Np0-7R-RfB" firstAttribute="leading" secondItem="01O-Cn-Ndw" secondAttribute="trailing" constant="30" id="MFb-ei-oXo"/>
+                            <constraint firstItem="Fzh-OC-sit" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mh3-l9-j63"/>
                             <constraint firstItem="Fzh-OC-sit" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PCR-tR-Hg6"/>
                             <constraint firstItem="Nvd-H1-Fze" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pqb-LH-uWy"/>
                             <constraint firstItem="6yg-Cs-HYv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Rej-bQ-zzb"/>
@@ -186,17 +196,19 @@
                             <constraint firstItem="2aD-H5-h7e" firstAttribute="top" secondItem="01O-Cn-Ndw" secondAttribute="bottom" constant="10" id="We8-21-LuJ"/>
                             <constraint firstItem="djt-j2-u0d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XS9-gA-bHD"/>
                             <constraint firstItem="01O-Cn-Ndw" firstAttribute="top" secondItem="YCd-nm-2Qg" secondAttribute="bottom" constant="15" id="Xj2-FV-PuP"/>
+                            <constraint firstItem="Fzh-OC-sit" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="YAK-Oq-KJv"/>
                             <constraint firstItem="Np0-7R-RfB" firstAttribute="top" secondItem="YCd-nm-2Qg" secondAttribute="bottom" constant="15" id="Yqo-qf-3cB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kjf-DI-2vp" secondAttribute="trailing" constant="15" id="ZfM-fU-aIy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nvd-H1-Fze" secondAttribute="trailing" id="a40-Qy-1L7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YCd-nm-2Qg" secondAttribute="trailing" constant="16" id="aCQ-5s-TZN"/>
                             <constraint firstItem="YCd-nm-2Qg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bGi-1I-xIU"/>
-                            <constraint firstItem="Fzh-OC-sit" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="eqQ-Kf-VBh"/>
                             <constraint firstItem="qwn-is-3hC" firstAttribute="leading" secondItem="01O-Cn-Ndw" secondAttribute="trailing" constant="30" id="gWg-SA-gq2"/>
+                            <constraint firstItem="Fzh-OC-sit" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gkf-S2-xSW"/>
                             <constraint firstItem="qwn-is-3hC" firstAttribute="top" secondItem="Kjf-DI-2vp" secondAttribute="bottom" constant="15" id="mTj-BQ-vnX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Bf-Az-RZ8" secondAttribute="trailing" constant="16" id="nRP-QM-ja3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qwn-is-3hC" secondAttribute="trailing" constant="16" id="noR-M0-t3r"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Np0-7R-RfB" secondAttribute="trailing" constant="16" id="oQK-lK-nBn"/>
+                            <constraint firstItem="Fzh-OC-sit" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p0N-81-XK9"/>
                             <constraint firstItem="djt-j2-u0d" firstAttribute="top" secondItem="DoE-gg-tdu" secondAttribute="bottom" constant="10" id="uOY-qf-e1L"/>
                             <constraint firstItem="01O-Cn-Ndw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="unP-5r-pWW"/>
                             <constraint firstItem="Kjf-DI-2vp" firstAttribute="top" secondItem="Np0-7R-RfB" secondAttribute="bottom" constant="15" id="wNS-JA-URt"/>

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sexLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userID: UILabel!
-    
+    let images = ["swift_001","swift_002","swift_003","swift_004","swift_005"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,12 +146,17 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        cell.backgroundColor = UIColor.secondaryLabel
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! MyCollectionViewCell
+        cell.theImageView.image = UIImage(named: images[indexPath.row])
+//        cell.backgroundColor = UIColor.secondaryLabel
+//        let image = UIImageView(image: UIImage(named: images[indexPath.row]))
+//        image.frame = cell.bounds
+//        image.contentMode = .scaleAspectFill
+//        cell.addSubview(image)
         return cell
     }
     
