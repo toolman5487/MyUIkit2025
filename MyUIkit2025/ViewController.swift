@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     }
     func collectionLayout(){
         let numberInLine:CGFloat = 3
-        var width = theCollectionView.frame.width
+        let width = theCollectionView.frame.width
         let cellWidth = (width - (numberInLine - 1) * 10)/numberInLine
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
