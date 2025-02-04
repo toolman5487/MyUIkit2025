@@ -11,6 +11,7 @@ import SDWebImage
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var theCollectionView: UICollectionView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var followedNumber: UILabel!
@@ -39,9 +40,18 @@ class ViewController: UIViewController {
         headImageView.clipsToBounds = true
         headImageView.layer.cornerRadius = headImageView.frame.width / 2
         
+        segmentControl.clipsToBounds = true
+        segmentControl.layer.borderWidth = 3
+        segmentControl.layer.cornerRadius = 10
+        segmentControl.layer.shadowColor = UIColor.black.cgColor
+        segmentControl.layer.shadowOffset = CGSize(width: 2, height: 2)
+        segmentControl.layer.shadowOpacity = 0.5
+        segmentControl.layer.shadowRadius = 4
+
         updateView()
         randomNumber()
-        collectionLayout()
+        collectionLayout(numberInLine: 3)
+        
         
     }
     
@@ -109,8 +119,7 @@ class ViewController: UIViewController {
         followerNumber.text = "\(follower)"
         followedNumber.text = "\(followed)"
     }
-    func collectionLayout(){
-        let numberInLine:CGFloat = 3
+    func collectionLayout(numberInLine: CGFloat){
         let width = theCollectionView.frame.width
         let cellWidth = (width - (numberInLine - 1) * 10)/numberInLine
         let layout = UICollectionViewFlowLayout()
@@ -119,6 +128,20 @@ class ViewController: UIViewController {
         layout.minimumLineSpacing = 1
         theCollectionView.setCollectionViewLayout(layout, animated: true)
     }
+    
+    @IBAction func theSegment(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            collectionLayout(numberInLine: 3)
+        case 1:
+            collectionLayout(numberInLine: 4)
+        case 2:
+            collectionLayout(numberInLine: 5)
+        default:
+            break
+        }
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
