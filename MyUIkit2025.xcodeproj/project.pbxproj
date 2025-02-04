@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		151C2EB32D50AFA100C6E0E6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 151C2EB22D50AFA100C6E0E6 /* Alamofire */; };
+		151C2EB82D50B36100C6E0E6 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 151C2EB72D50B36100C6E0E6 /* SwiftyJSON */; };
+		151C2EBB2D51B9BF00C6E0E6 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 151C2EBA2D51B9BF00C6E0E6 /* SDWebImage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		15FBCE6F2D50A6960046F9D5 /* MyUIkit2025.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyUIkit2025.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151C2EBB2D51B9BF00C6E0E6 /* SDWebImage in Frameworks */,
+				151C2EB82D50B36100C6E0E6 /* SwiftyJSON in Frameworks */,
+				151C2EB32D50AFA100C6E0E6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 			);
 			name = MyUIkit2025;
 			packageProductDependencies = (
+				151C2EB22D50AFA100C6E0E6 /* Alamofire */,
+				151C2EB72D50B36100C6E0E6 /* SwiftyJSON */,
+				151C2EBA2D51B9BF00C6E0E6 /* SDWebImage */,
 			);
 			productName = MyUIkit2025;
 			productReference = 15FBCE6F2D50A6960046F9D5 /* MyUIkit2025.app */;
@@ -107,6 +119,11 @@
 			);
 			mainGroup = 15FBCE662D50A6960046F9D5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				151C2EB12D50AFA100C6E0E6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				151C2EB62D50B36100C6E0E6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				151C2EB92D51B9BF00C6E0E6 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 15FBCE702D50A6960046F9D5 /* Products */;
 			projectDirPath = "";
@@ -335,6 +352,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		151C2EB12D50AFA100C6E0E6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		151C2EB62D50B36100C6E0E6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		151C2EB92D51B9BF00C6E0E6 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.20.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		151C2EB22D50AFA100C6E0E6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 151C2EB12D50AFA100C6E0E6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		151C2EB72D50B36100C6E0E6 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 151C2EB62D50B36100C6E0E6 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		151C2EBA2D51B9BF00C6E0E6 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 151C2EB92D51B9BF00C6E0E6 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 15FBCE672D50A6960046F9D5 /* Project object */;
 }
