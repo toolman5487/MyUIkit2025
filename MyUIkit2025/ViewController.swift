@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         headView.clipsToBounds = true
         headView.layer.cornerRadius = headView.frame.width / 2
         headView.layer.borderColor = UIColor.black.cgColor
-        headView.layer.borderWidth = 1
+        headView.layer.borderWidth = 3
         
         headImageView.clipsToBounds = true
         headImageView.layer.cornerRadius = headImageView.frame.width / 2
@@ -110,10 +110,13 @@ class ViewController: UIViewController {
         followedNumber.text = "\(followed)"
     }
     func collectionLayout(){
+        let numberInLine:CGFloat = 3
+        var width = theCollectionView.frame.width
+        let cellWidth = (width - (numberInLine - 1) * 10)/numberInLine
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 100)
+        layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
         layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 1
         theCollectionView.setCollectionViewLayout(layout, animated: true)
     }
 }
