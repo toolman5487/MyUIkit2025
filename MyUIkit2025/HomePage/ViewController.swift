@@ -160,10 +160,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
         cell.theImageView.image = UIImage(named: images[indexPath.row])
         cell.setCellUI()
         cell.viewerAction = {
-            let imageViewPage =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
-            imageViewPage.theImage = UIImage(named: self.images[indexPath.row])
-            self.present(imageViewPage, animated: true) {
-            }
+//            let imageViewPage =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+//            imageViewPage.theImage = UIImage(named: self.images[indexPath.row])
+//            self.present(imageViewPage, animated: true) {
+//            }
+            let imageViewPage = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Image_v2ViewController")
+            self.present(imageViewPage, animated: true)
         }
         return cell
     }
