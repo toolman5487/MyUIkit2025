@@ -285,6 +285,36 @@
             </objects>
             <point key="canvasLocation" x="-205" y="775"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="BMR-ZU-jBo">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="rQA-zW-wBj" customClass="ImageViewController" customModule="MyUIkit2025" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EmS-42-H9t">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpv-Kj-YjD">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <color key="tintColor" systemColor="secondaryLabelColor"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9dS-oX-Xus"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9dS-oX-Xus" firstAttribute="bottom" secondItem="bpv-Kj-YjD" secondAttribute="bottom" id="NDX-tk-k8R"/>
+                            <constraint firstItem="9dS-oX-Xus" firstAttribute="trailing" secondItem="bpv-Kj-YjD" secondAttribute="trailing" constant="16" id="WdX-NE-G6N"/>
+                            <constraint firstItem="bpv-Kj-YjD" firstAttribute="top" secondItem="9dS-oX-Xus" secondAttribute="top" id="kgw-HB-sKD"/>
+                            <constraint firstItem="bpv-Kj-YjD" firstAttribute="leading" secondItem="9dS-oX-Xus" secondAttribute="leading" constant="16" id="qqM-xf-yee"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewer" destination="bpv-Kj-YjD" id="uuv-9o-A7h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZZx-yn-vnW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1121" y="1467"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BJg-E6-Wmr">
             <objects>
@@ -314,6 +344,9 @@
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

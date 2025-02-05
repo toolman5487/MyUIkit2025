@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         segmentControl.layer.shadowOffset = CGSize(width: 2, height: 2)
         segmentControl.layer.shadowOpacity = 0.5
         segmentControl.layer.shadowRadius = 4
-
+        
         updateView()
         randomNumber()
         collectionLayout(numberInLine: 3)
@@ -151,12 +151,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! MyCollectionViewCell
+        //        cell.backgroundColor = UIColor.secondaryLabel
+        //        let image = UIImageView(image: UIImage(named: images[indexPath.row]))
+        //        image.frame = cell.bounds
+        //        image.contentMode = .scaleAspectFill
+        //        cell.addSubview(image)
+        
         cell.theImageView.image = UIImage(named: images[indexPath.row])
-//        cell.backgroundColor = UIColor.secondaryLabel
-//        let image = UIImageView(image: UIImage(named: images[indexPath.row]))
-//        image.frame = cell.bounds
-//        image.contentMode = .scaleAspectFill
-//        cell.addSubview(image)
+        cell.setCellUI()
+        cell.viewerAction = {
+            let imageViewPage =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+            imageViewPage.theImage = UIImage(named: self.images[indexPath.row])
+            self.present(imageViewPage, animated: true) {
+            }
+        }
         return cell
     }
     
