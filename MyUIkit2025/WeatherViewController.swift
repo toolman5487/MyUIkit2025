@@ -72,7 +72,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             nowLat = location.coordinate.latitude
             nowLon = location.coordinate.longitude
             locationManager.stopUpdatingLocation()
-           
+            
             // 更新區域標籤
             updateAreaLabel(with: location)
             
@@ -148,8 +148,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         
         // 最高溫、最低溫
         switch highLow {
-        case "L": tempString = "L: \(tempString)°C"
-        case "H": tempString = "H: \(tempString)°C"
+        case "L": tempString = "\(tempString)°C"
+        case "H": tempString = "\(tempString)°C"
         default: tempString = "\(tempString)°C"
         }
         
@@ -174,13 +174,32 @@ extension WeatherViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.timeLabel.text = "\(nowTime[startIndex..<middleIndex])\n\(nowTime[middleIndex..<endIndex])"
         cell.weatherLabel.text = item.weather.first?.main.description
-        cell.lowTempLabel?.text = tempFormat(c: item.main.temp_min, highLow: "L")
-        cell.highTempLabel?.text = tempFormat(c: item.main.temp_max, highLow: "H")
+        cell.lowTempLabel?.text = "最低溫度: \(tempFormat(c: item.main.temp_min, highLow: "L"))"
+        cell.highTempLabel?.text = "最高溫度: \(tempFormat(c: item.main.temp_max, highLow: "H"))"
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "天氣預報"
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.black // 設定背景為黑色
+
+        let label = UILabel()
+        label.text = "天氣預報"
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = UIColor.white
+        label.textAlignment = .center  // 讓標題置中
+        label.translatesAutoresizingMaskIntoConstraints = false  // 啟用 Auto Layout
+
+        headerView.addSubview(label)
+
+        // 使用 Auto Layout 讓 Label 置中
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16), // 靠左對齊
+            label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor), // 垂直置中
+        ])
+
+        return headerView
     }
+
 }
