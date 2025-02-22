@@ -1,13 +1,13 @@
 //
-//  NewsTableViewCell.swift
+//  VideoTableViewCell.swift
 //  MyUIkit2025
 //
-//  Created by Willy Hsu on 2025/2/10.
+//  Created by Willy Hsu on 2025/2/22.
 //
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class VideoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

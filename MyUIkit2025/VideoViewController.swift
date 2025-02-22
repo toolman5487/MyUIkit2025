@@ -1,13 +1,13 @@
 //
-//  NewsViewController.swift
+//  VideoViewController.swift
 //  MyUIkit2025
 //
-//  Created by Willy Hsu on 2025/2/8.
+//  Created by Willy Hsu on 2025/2/22.
 //
 
 import UIKit
 
-class NewsViewController: UIViewController {
+class VideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
